@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>99 Bottles of Beer</title>
+</head>
+<body>
+    <h1>Go the the log</h1>
+    <script>
+        var numBottles = 99;
+            //Loop to print the lyrics
+            while (numBottles > 1) {
+                console.log(numBottles + " bottles of beer on the wall, " + numBottles + " bottles of beer");
+                console.log("Take one down, pass it around, " + (numBottles - 1) + " bottles of beer on the wall");
+                numBottles--;
+                //If statement to change the bottle lyric to singular
+                if (numBottles == 2) {
+                    console.log(numBottles + " bottles of beer on the wall, " + numBottles + " bottles of beer");
+                    console.log("Take one down, pass it around, " + (numBottles - 1) + " bottle of beer on the wall");
+                    numBottles--;
+                } 
+                //If statement for the final verses
+                if (numBottles == 1) {
+                    console.log(numBottles + " bottle of beer on the wall, " + numBottles + " bottle of beer");
+                    console.log("Take one down, pass it around, no more bottles of beer on the wall");
+                    console.log("No more bottles of beer on the wall, no more bottles of beer");
+                    console.log("Go to the store and buy some more, 99 bottles of beer on the wall"); 
+                    return;
+                }
+            }
+    </script>
+</body>
+</html>
