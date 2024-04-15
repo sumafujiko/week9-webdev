@@ -1,0 +1,53 @@
+<!--- Create a web page that asks a user how many subjects they take, and what marks they got in each subject. 
+The application should then output their results-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subject Calculator</title>
+</head>
+<body>
+    <h1 id="results">Try again 0.0</h1>
+    <script>
+        // Declare variables
+        let mark = 0;
+        let totalMark = 0;
+        let subjectInput = parseInt(prompt("How many subjects do you take?"));
+
+        // Check if the user has entered a valid number of subjects
+        if (subjectInput < 2) {
+            alert("You must take at least 2 subjects");
+            process.exit(0);
+        } else if (subjectInput > 10) {
+            alert("You can only take a maximum of 10 subjects");
+            process.exit(0);
+        }
+
+        // Loop to get the marks for each subject
+        for (let i = 0; i < subjectInput; i++) {
+            mark = parseInt(prompt("Enter your mark for subject " + (i + 1)));
+            totalMark += mark;
+        }
+
+        // Calculate the average mark
+        let average = totalMark / subjectInput;
+
+        // Calculate and output the grade and mark
+        if (average >= 90) {
+            document.getElementById("results").textContent = "Your average mark is " + average + " which is an A";
+        } else if (average >= 80) {
+            document.getElementById("results").textContent = "Your average mark is " + average + " which is a B";
+        } else if (average >= 70) {
+            document.getElementById("results").textContent = "Your average mark is " + average + " which is a C";
+        } else if (average >= 60) {
+            document.getElementById("results").textContent = "Your average mark is " + average + " which is a D";
+        } else if (average >= 50) {
+            document.getElementById("results").textContent = "Your average mark is " + average + " which is an E";
+        } else {
+            document.getElementById("results").textContent = "Your average mark is " + average + " which is an F";
+        }
+    </script>
+</body>
+</html>
